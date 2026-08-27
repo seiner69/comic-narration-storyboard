@@ -1,0 +1,16 @@
+{
+  "pure_han_count": 76,
+  "estimated_minutes_at_340_han_per_minute": 0.22,
+  "estimated_minutes_at_360_han_per_minute": 0.21,
+  "semantic_unit_count": 8,
+  "visual_segment_count": 4,
+  "visual_source_count": 4,
+  "cross_source_visual_source_count": 0,
+  "contact_sheet_count": 1,
+  "max_full_panel_display_count": 1,
+  "validation": {
+    "script_storyboard_identity": true,
+    "manual_semantic_review_required": true,
+    "no_ai_generated_comic_content": true
+  }
+}

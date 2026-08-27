@@ -1,0 +1,9 @@
+﻿segment_id,order,chapter,narration,source_id,selected_original,preview_image,processed_image,crop_coordinates,full_frame_region,composition_mode,motion,visual_subject
+segment_0001,1,ch_001,"这个曾被多国追捕的男人，
+如今却在仇家门前低头。",panel_source_0001,selected-originals/panel_source_0001.png,visual-segment-previews/segment_0001.png,processed/segment_0001.jpg,"0,341,690,859","0,0,690,1200",blurred_full_frame,slow_zoom_in,强者在掌握线索的人面前低头
+segment_0002,2,ch_001,"因为妹妹刚刚失踪，
+对方手里握着唯一线索。",panel_source_0002,selected-originals/panel_source_0002.png,visual-segment-previews/segment_0002.png,processed/segment_0002.jpg,"0,191,690,709","0,0,690,900",blurred_full_frame,slow_zoom_in,对方拿出失踪者照片
+segment_0003,3,ch_001,"老板抬手撕掉照片，
+林川却先扣住他的手腕。",panel_source_0003,selected-originals/panel_source_0003.png,visual-segment-previews/segment_0003.png,processed/segment_0003.jpg,"0,491,690,1009","0,0,690,1500",blurred_full_frame,slow_zoom_in,老板撕照片时手腕被扣住
+segment_0004,4,ch_001,"门外保镖同时冲进来，
+新的障碍立刻挡住去路。",panel_source_0004,selected-originals/panel_source_0004.png,visual-segment-previews/segment_0004.png,processed/segment_0004.jpg,"0,291,690,809","0,0,690,1100",blurred_full_frame,fast_punch_in,多名保镖冲入房间形成新阻碍

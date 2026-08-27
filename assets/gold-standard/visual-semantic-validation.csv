@@ -1,0 +1,9 @@
+﻿segment_id,order,chapter,narration,final_status,semantic_evidence,dialogue_required_for_match,dialogue_or_text_majority,subject_or_action_clipped,source_id,processed_image
+segment_0001,1,ch_001,"这个曾被多国追捕的男人，
+如今却在仇家门前低头。",pass,强者在掌握线索的人面前低头,false,false,false,panel_source_0001,processed/segment_0001.jpg
+segment_0002,2,ch_001,"因为妹妹刚刚失踪，
+对方手里握着唯一线索。",pass,对方拿出失踪者照片,false,false,false,panel_source_0002,processed/segment_0002.jpg
+segment_0003,3,ch_001,"老板抬手撕掉照片，
+林川却先扣住他的手腕。",pass,老板撕照片时手腕被扣住,false,false,false,panel_source_0003,processed/segment_0003.jpg
+segment_0004,4,ch_001,"门外保镖同时冲进来，
+新的障碍立刻挡住去路。",pass,多名保镖冲入房间形成新阻碍,false,false,false,panel_source_0004,processed/segment_0004.jpg

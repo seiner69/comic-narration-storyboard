@@ -1,0 +1,4 @@
+interface:
+  display_name: "漫画解说与同步视觉分镜"
+  short_description: "从连续漫画同步生成中文解说、完整画格素材与可验证分镜"
+  default_prompt: "使用 $comic-narration-storyboard 从指定漫画章节同步生成中文解说、完整画格视觉素材和分镜映射，并完成语义与交付验证。"
