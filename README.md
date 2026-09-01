@@ -1,48 +1,48 @@
-# Comic Narration Storyboard
+# Comic Narration Storyboard（漫画解说与视觉分镜）
 
-A Codex skill and Python toolkit for producing synchronized Chinese comic narration, source-grounded visual mappings, processed still frames, contact sheets, and objective delivery validation.
+这是一个 Codex Skill 与 Python 工具集，用于同步生成中文漫画解说、基于来源的画面映射、处理后的静帧、接触表和客观交付验证。
 
-The central rule is simple: narration and visual evidence are built together. If a sentence is not supported by the authoritative comic frame, the sentence or the frame must change.
+核心规则只有一条：旁白与视觉证据必须同时构建。如果一句旁白得不到权威漫画画面的支持，就必须修改旁白或更换画面。
 
-## Highlights
+## 主要能力
 
-- Source-bounded narration with explicit chapter limits
-- One narration unit mapped to one reviewable visual source
-- Full-panel and cross-source extraction rules
-- Dialogue/SFX/text-band removal without inventing comic pixels
-- Final-size foreground legibility audit
-- Contact-sheet generation for manual semantic review
-- Structural, provenance, image-profile, dimension, repetition, and metric validation
-- Reproducible fictional gold-standard fixture generated entirely with Pillow
+- 明确章节边界、以来源为准的旁白生成
+- 每个旁白单元映射到可复核的视觉来源
+- 完整画格与跨源提取规则
+- 在不虚构漫画像素的前提下处理对白、拟声词和文字带
+- 按最终输出尺寸执行前景可读性审计
+- 生成接触表，供人工进行语义检查
+- 验证结构、来源、图片配置、尺寸、重复率和交付指标
+- 使用 Pillow 生成完全虚构、可重复构建的金标准夹具
 
-## Requirements
+## 前置条件
 
-- Python 3.10 or newer
-- Pillow with ImageCms support
+- Python 3.10+
+- 支持 `ImageCms` 的 Pillow
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-## Use as a Codex skill
+## 作为 Codex Skill 使用
 
-Clone or copy this repository into your personal Codex skills directory under the name `comic-narration-storyboard`, then invoke:
+将本仓库克隆或复制到个人 Codex Skill 目录，并保持目录名为 `comic-narration-storyboard`，然后调用：
 
 ```text
 $comic-narration-storyboard
 ```
 
-Read `SKILL.md` for the complete agent workflow. The skill requires an authoritative comic source; references and older deliveries may guide style but must not supply plot facts.
+完整工作流程见 `SKILL.md`。该 Skill 必须有权威漫画来源；参考稿和旧交付只能提供节奏参考，不能提供剧情事实。
 
-## Scaffold a delivery
+## 初始化交付目录
 
 ```bash
 python scripts/init_delivery.py ./work/episode-001
 ```
 
-The scaffold contains the required CSV/Markdown/JSON files and directories. Existing template files are never overwritten silently.
+生成的目录包含所需 CSV、Markdown、JSON 文件和子目录。已有模板文件不会被静默覆盖。
 
-## Rebuild derived artifacts
+## 重建派生产物
 
 ```bash
 python scripts/build_script_from_storyboard.py \
@@ -52,7 +52,7 @@ python scripts/build_script_from_storyboard.py \
 python scripts/build_contact_sheets.py ./work/episode-001
 ```
 
-## Audit and validate
+## 审计与验收
 
 ```bash
 python scripts/audit_frame_legibility.py \
@@ -66,47 +66,47 @@ python scripts/validate_delivery.py \
   --chapters ch_001,ch_002
 ```
 
-A passing validator confirms structure and pixels, not narrative meaning. Contact sheets still require human semantic review.
+验证器通过只代表结构和像素符合要求，不代表叙事语义已经正确。接触表仍需人工复核。
 
-## Rebuild the fictional fixture
+## 重建虚构金标准
 
 ```bash
 python scripts/create_gold_standard_fixture.py \
   --output ./work/gold-standard
 ```
 
-The fixture contains only schematic shapes drawn by the script. It does not contain third-party comic artwork. The ICC profile timestamp is frozen so identical runs produce byte-identical artifact trees.
+夹具只包含脚本绘制的示意形状，不含第三方漫画。ICC 配置的时间戳已冻结，因此相同输入会生成字节级一致的文件树。
 
-## Test
+## 验证
 
 ```bash
 python -m unittest -v tests.test_end_to_end
 ```
 
-The test generates the fixture twice, compares every file hash, runs delivery validation, and checks the final-size legibility audit.
+测试会连续生成两次夹具、比较每个文件哈希、执行交付验证，并检查最终尺寸下的可读性。
 
-## Repository structure
+## 目录结构
 
 ```text
-agents/       Codex skill metadata
-assets/       Empty delivery template and fictional gold standard
-references/   Narration, visual, provenance, and validation rules
-scripts/      Scaffold, build, audit, validation, and fixture tools
-tests/        Deterministic end-to-end test
-SKILL.md      Codex skill instructions
+agents/       Codex Skill 元数据
+assets/       空交付模板与虚构金标准
+references/   旁白、视觉、来源和验证规则
+scripts/      初始化、构建、审计、验证和夹具工具
+tests/        确定性端到端测试
+SKILL.md      Codex Skill 指令
 ```
 
-## Known limits
+## 已知限制
 
-- Narrative truth and visual-semantic fit cannot be certified by automation alone.
-- OCR is only secondary evidence and is not included in this repository.
-- Final originals still depend on the user's authorized comic source and extraction pipeline.
-- Processed-frame generation can consume substantial memory for very tall source art.
+- 叙事事实和句画语义匹配无法完全依靠自动化认证。
+- OCR 只能作为辅助证据，本仓库不包含 OCR 实现。
+- 最终原图仍依赖用户有权使用的漫画来源和提取流程。
+- 处理超高源图时可能占用较多内存。
 
-## Provenance
+## 来源
 
-Created from a Codex-assisted workflow on 2026-08-19 and prepared as a clean public snapshot on 2026-08-27. Authoritative comic inputs, private delivery files, machine-specific paths, and conversation history are not included.
+项目来自 2026-08-19 的 Codex 辅助工作流，并于 2026-08-27 整理为干净公开副本。仓库不包含权威漫画输入、私人交付文件、本机路径或对话历史。
 
-## License
+## 许可证
 
-No open-source license has been granted for this repository yet. The absence of a license means normal copyright restrictions apply.
+本仓库目前没有授予开源许可证。没有许可证意味着默认版权限制仍然有效。
