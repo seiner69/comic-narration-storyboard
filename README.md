@@ -18,11 +18,15 @@
 ## 前置条件
 
 - Python 3.10+
-- 支持 `ImageCms` 的 Pillow
+- 支持 `ImageCms` 的 Pillow 12.3.0 或更新的 12.x 版本
+
+安装或升级依赖（已有环境也需要执行）：
 
 ```bash
-python -m pip install -r requirements.txt
+python -m pip install --upgrade -r requirements.txt
 ```
+
+版本下限用于排除 Pillow 12.3.0 之前已披露的 `ImageCms` 和裁切相关越界写入问题，参见 [ImageCms 安全公告](https://github.com/advisories/GHSA-9hw9-ch79-4vh6)与[裁切安全公告](https://github.com/advisories/GHSA-6r8x-57c9-28j4)。这不表示本工具已证实存在可利用路径；处理外部图片前仍应更新依赖，并限制输入规模。Pillow 13 尚未验证，因此暂不纳入支持范围。
 
 ## 作为 Codex Skill 使用
 
