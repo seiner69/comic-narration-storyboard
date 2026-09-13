@@ -2,12 +2,21 @@
 
 Pass all applicable checks before delivery.
 
+## Contract routing
+
+For a rendered delivery, use the image/provenance checks and tools below. For an approved-panel prose revision, validate ordered narration, paragraph separation, existing approved IDs and PNG paths, allowed scope and protected hashes. Rendering, extraction and image-metric checks are not applicable when those artifacts were not requested; do not claim the full rendered-schema validator passed.
+
 ## Script and mapping
 
-- `script.md` equals the ordered, line-flattened `storyboard.csv.narration` exactly.
+- For the legacy rendered schema, `script.md` equals the ordered, line-flattened `storyboard.csv.narration` exactly; paragraph-mode rules are below.
 - Segment order is contiguous and every segment has narration and at least one source.
 - Character names and relationships are consistent with the canonical source.
 - No unit states an event outside the allowed chapters.
+- For paragraph rows generated with `--paragraphs`, script text equals the ordered narration with the chosen paragraph separators. Do not count each paragraph as one semantic unit or each repeated panel reference as a new display.
+- Read the prose without images: essential relationships, requests, responses and consequences remain understandable. Review emotional flourishes against source art/dialogue/context, not solely against an isolated image.
+- Character judgments, including rhetorical questions, stay attributable; demands and contested accounts do not become established outcomes. Do not invent a cause to remove a known ambiguity.
+- A repetition retained for emotional effect changes perspective, meaning or response, rather than only restating the same state. This is an editorial check, not a regex ban on repeated words.
+- For a file-ordered paragraph CSV without `order`, generate with `--paragraphs --file-order`. Validate any paragraph IDs as nonempty and unique. Do not treat physical file order as an accidental fallback or the number of rows as an editing cadence.
 
 ## Provenance
 
@@ -31,18 +40,19 @@ Pass all applicable checks before delivery.
 
 ## Semantic QC
 
-- Every segment passes standalone visual-semantic review.
+- Every segment passes the applicable visible-action and contextual factual checks described in `narration-visual-rules.md`.
 - Current subject, action, result, reaction or key object supports the narration.
-- No future event is shown early.
+- Visuals follow the telling; any time shift stays within the explicitly agreed spoiler and source scope.
 - No subject or action is clipped.
 - No pure text, isolated SFX or dialogue-majority foreground remains when a visual alternative exists.
 - Detached dialogue, narration, SFX, phone UI and decorative white bands are removed from the useful foreground even when they occupy less than half of the frame.
 - OCR is not the sole evidence for a match.
+- A source speech bubble may establish an essential fact without being shown. A metaphor does not require a literal image, but must not smuggle in an event, motive or outcome.
 - All contact sheets are manually reviewed after generation.
 
 ## Metrics
 
-Calculate from final artifacts:
+Calculate the requested metrics from final artifacts; do not fabricate render metrics for a prose/mapping-only contract:
 
 - pure Han count;
 - duration at each requested Han-per-minute rate;

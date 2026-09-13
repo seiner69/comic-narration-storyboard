@@ -2,32 +2,31 @@
 
 ## Narration
 
-- Use third-person, causal, continuously advancing Chinese narration.
-- Start with a simple, direct contrast: formidable identity versus present humiliation, sacrifice or constraint.
-- End the hook quickly and return to the first chronological scene. Do not preview later chapters to manufacture suspense.
-- Express one action, result or turn per semantic unit. Treat 10–18 Han characters as a useful default, not a quota.
-- After three to five concrete actions, add at most one concise judgment when it changes interpretation.
-- Preserve a few decisive lines at identity reveals, danger escalations and emotional recovery points.
-- Remove greetings, repeated dialogue, redundant explanation and side plots that do not change the main chain.
+- Use the requested viewpoint and natural, understandable Chinese prose. Read [narrative-craft.md](narrative-craft.md) for composition and emotional emphasis.
+- Choose a fitting opening rather than requiring every story to start with an identity contrast. Keep any approved baseline and spoiler/time-order constraints.
+- Write coherent conflict paragraphs; sentence length, commentary frequency and cutting rhythm are not fixed quotas.
+- Allow source-grounded psychological narration, contrast, metaphor, selective repetition, summary and lingering reactions. Do not make every line ornate or give every line a reversal.
+- Preserve dialogue that changes a relationship or decision. Remove redundant restatement, but retain background needed to understand the characters' actions.
 - Do not add motives, powers, events, relationships or outcomes absent from the canonical comic.
 - Do not force a target length. Density outranks duration.
 
-Preferred progression:
+Continuity check, not a prose template:
 
 ```text
 person acts → result appears → opponent reacts → new obstacle arrives
 ```
 
-Avoid analysis-first language such as abstract system commentary, cost theories or institutional generalization unless the comic visibly establishes it and the point is indispensable.
+Do not let abstract system commentary replace the characters' experience. Explanation is useful when it supplies an indispensable cause or relationship; a lack of single-frame proof is not a reason to delete dialogue-grounded context.
 
 ## Visual selection
 
 - Show the person named by the current narration whenever available.
 - For emotion, prefer face and body reaction. For action, prefer occurrence and result. For identity reveals, show the subject and other characters' reaction.
-- Do not show future events before narration reaches them.
+- Visual order must follow the current telling. Use a flashforward or flashback only within the agreed narrative/spoiler scope, and signal the shift clearly.
 - Reject advertisements, credits, warnings, Discord promotions, signature pages and unrelated blank space.
 - Reject pure text screens, large dialogue regions and isolated SFX when character, action, reaction or object evidence is available.
 - Permit a dialogue box to be clipped. Dialogue completeness is not an extraction goal.
+- In approved-panel-only mode, keep approved boundaries and PNGs unchanged. Write framing/hold advice, and flag an unsuitable boundary rather than silently repairing it.
 
 ## Complete-panel rule
 
@@ -55,7 +54,9 @@ After scene splitting and text-band removal, crop to the shortest self-contained
 - When the flag fires, shorten the crop, split independent scenes, or select another panel. A blurred background does not cure an unreadably narrow foreground.
 - Keep an exception only for a deliberate single-scene scale reveal whose subject remains obvious at preview size; record the reason in QC.
 
-## Standalone semantic test
+## Standalone visual test and contextual factual test
+
+An isolated frame tests visible subjects and actions, not whether every sentence of a story is a literal image description. Verify relationships, motives, past context and spoken threats with the official dialogue/context separately. Do not delete that information when cropping away bubbles. Figurative emotional language can be supported by the correct character state and established conflict rather than a literal image of the metaphor.
 
 Evaluate a frame without relying on adjacent narration. Score each applicable item:
 
@@ -74,11 +75,11 @@ Use this decision scale:
 - `1 weak`: only location, text or adjacency supports the line.
 - `0 mismatch`: wrong person, event, order or unsupported claim.
 
-Keep scores 2–3. For scores 0–1, reselect, enlarge to the complete panel, inspect for boundary clipping, or rewrite the narration to visible facts.
+For a concrete key action/result, require direct visual evidence; a merely plausible face is insufficient. For dialogue, background or emotional interpretation, a correct speaker/listener/state can be supporting evidence when the factual source and reason are recorded. For a weak or wrong visual, reselect, inspect clipping, or correct the actual mismatch; do not mechanically rewrite all narration into visible actions.
 
-OCR can disprove a match but cannot by itself prove a match. Dialogue or text must not occupy most of the useful clear foreground.
+OCR cannot by itself prove a visible action. An apparent OCR contradiction requires checking the original and speaker attribution, not automatic rejection. Dialogue or text must not occupy most of a newly rendered useful clear foreground.
 
-Run the standalone test again after dialogue and SFX bands are removed. If the art no longer supports the line, reselect the panel or rewrite the narration; do not restore the text block to make the match work.
+Run the visual test again after text-band removal when rendering. Reselect a relevant speaker, listener, reaction or action if needed; do not restore a large text block to prove visual support, or discard the underlying dialogue as a fact source.
 
 ## Repetition
 
@@ -87,3 +88,4 @@ Run the standalone test again after dialogue and SFX bands are removed. If the a
 - Reuse only for a real editorial phase such as establishing, reaction and result.
 - Vary scale or editor motion while retaining the full art; do not simulate variety with destructive crops.
 - Reject adjacent frames with identical rendered hashes.
+- Count displays, not narration clauses or repeated CSV references: a continuous hold across paragraphs is one display. A callback in the prose does not require a visual replay.
